@@ -1,4 +1,0 @@
-We are learning git this is 2nd tutorial.
-
-
-now we are going to diff command....
