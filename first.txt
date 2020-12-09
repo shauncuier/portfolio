@@ -1,4 +1,0 @@
-wow we ar learning git.
-we have commit this file name...
-wow
-we have learn git now we can use got and github
