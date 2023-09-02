@@ -42,12 +42,21 @@
   <p>Email: <a href="mailto:shauncuier@gmail.com" target="_blank">shauncuier@gmail.com</a></p>
 
   <!-- don't post physical address, personal phone number or other personal information on the web! -->
-</body>
 
 <footer>
   <hr>
   <!-- change the name to yours! -->
-  <code>Copyright &COPY; 2020 Jashedul Islam Shaun</code>
+  <code>Copyright &COPY; <span id="year"></span> 2020 Jashedul Islam Shaun</code>
 </footer>
+
+
+<script>
+  const d = new Date();
+  document.getElementById("demo").innerHTML = d.getFullYear();
+  </script>
+
+</body>
+
+
 
 </html>
