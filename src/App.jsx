@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Skills from './components/Skills'
-import Projects from './components/Projects'
-import Experience from './components/Experience'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+
+import Header from './Components/Header'
+import Hero from './Components/Hero'
+import About from './Components/About'
+import Skills from './Components/Skills'
+import Projects from './Components/Projects'
+import Experience from './Components/Experience'
+import Contact from './Components/Contact'
+import Footer from './Components/Footer'
 import './index.css'
 
 function App() {
