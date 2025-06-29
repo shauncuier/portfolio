@@ -14,8 +14,8 @@ const Contact = ({ isDarkMode }) => {
     {
       icon: <Mail size={24} />,
       label: 'Email',
-      value: 'jashedul.shaun@gmail.com',
-      href: 'mailto:jashedul.shaun@gmail.com'
+      value: 'jashedulislamshaun@gmail.com',
+      href: 'mailto:jashedulislamshaun@gmail.com'
     },
     {
       icon: <Phone size={24} />,
