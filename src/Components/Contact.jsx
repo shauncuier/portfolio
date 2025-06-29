@@ -48,11 +48,10 @@ const Contact = ({ isDarkMode }) => {
   }
 
   return (
-    <section 
-      id="contact" 
-      className={`py-20 transition-colors duration-300 ${
-        isDarkMode ? 'bg-dev-surface' : 'bg-white'
-      }`}
+    <section
+      id="contact"
+      className={`py-20 transition-colors duration-300 ${isDarkMode ? 'bg-dev-surface' : 'bg-white'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -62,9 +61,8 @@ const Contact = ({ isDarkMode }) => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className={`text-3xl sm:text-4xl font-bold mb-6 font-mono transition-colors ${
-            isDarkMode ? 'text-dev-text' : 'text-gray-900'
-          }`}>
+          <h2 className={`text-3xl sm:text-4xl font-bold mb-6 font-mono transition-colors ${isDarkMode ? 'text-dev-text' : 'text-gray-900'
+            }`}>
             <span className="text-dev-comment">// </span>
             <span className="text-dev-keyword">const</span>{' '}
             <span className="text-dev-variable">contact</span>{' '}
@@ -72,11 +70,10 @@ const Contact = ({ isDarkMode }) => {
             <span className="text-dev-string">"Get In Touch"</span>
           </h2>
           <div className="w-20 h-1 bg-primary-500 mx-auto mb-6"></div>
-          <p className={`text-lg max-w-2xl mx-auto font-mono transition-colors ${
-            isDarkMode ? 'text-dev-textMuted' : 'text-gray-600'
-          }`}>
+          <p className={`text-lg max-w-2xl mx-auto font-mono transition-colors ${isDarkMode ? 'text-dev-textMuted' : 'text-gray-600'
+            }`}>
             <span className="text-dev-comment">/* </span>
-            Have a project in mind or just want to chat? I'd love to hear from you. 
+            Have a project in mind or just want to chat? I'd love to hear from you.
             Let's create something amazing together!
             <span className="text-dev-comment"> */</span>
           </p>
@@ -90,9 +87,8 @@ const Contact = ({ isDarkMode }) => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className={`text-2xl font-bold mb-8 font-mono transition-colors ${
-              isDarkMode ? 'text-dev-text' : 'text-gray-900'
-            }`}>
+            <h3 className={`text-2xl font-bold mb-8 font-mono transition-colors ${isDarkMode ? 'text-dev-text' : 'text-gray-900'
+              }`}>
               <span className="text-dev-comment">// </span>Let's Talk
             </h3>
             <div className="space-y-6 mb-8">
@@ -102,52 +98,45 @@ const Contact = ({ isDarkMode }) => {
                   whileHover={{ x: 5 }}
                   className="flex items-center space-x-4"
                 >
-                  <div className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center transition-colors ${
-                    isDarkMode 
-                      ? 'bg-primary-500/20 text-primary-400' 
+                  <div className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center transition-colors ${isDarkMode
+                      ? 'bg-primary-500/20 text-primary-400'
                       : 'bg-primary-100 text-primary-600'
-                  }`}>
+                    }`}>
                     {item.icon}
                   </div>
                   <div>
-                    <p className={`text-sm transition-colors ${
-                      isDarkMode ? 'text-dev-textMuted' : 'text-gray-500'
-                    }`}>{item.label}</p>
+                    <p className={`text-sm transition-colors ${isDarkMode ? 'text-dev-textMuted' : 'text-gray-500'
+                      }`}>{item.label}</p>
                     {item.href ? (
                       <a
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`font-medium transition-colors ${
-                          isDarkMode 
-                            ? 'text-dev-text hover:text-primary-400' 
+                        className={`font-medium transition-colors ${isDarkMode
+                            ? 'text-dev-text hover:text-primary-400'
                             : 'text-gray-900 hover:text-primary-600'
-                        }`}
+                          }`}
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <p className={`font-medium transition-colors ${
-                        isDarkMode ? 'text-dev-text' : 'text-gray-900'
-                      }`}>{item.value}</p>
+                      <p className={`font-medium transition-colors ${isDarkMode ? 'text-dev-text' : 'text-gray-900'
+                        }`}>{item.value}</p>
                     )}
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            <div className={`rounded-xl p-6 border transition-colors ${
-              isDarkMode 
-                ? 'bg-dev-elevated border-dev-border' 
+            <div className={`rounded-xl p-6 border transition-colors ${isDarkMode
+                ? 'bg-dev-elevated border-dev-border'
                 : 'bg-gradient-to-br from-primary-50 to-secondary-50 border-gray-200'
-            }`}>
-              <h4 className={`font-semibold mb-3 transition-colors ${
-                isDarkMode ? 'text-dev-text' : 'text-gray-900'
-              }`}>Quick Response</h4>
-              <p className={`text-sm mb-4 transition-colors ${
-                isDarkMode ? 'text-dev-textMuted' : 'text-gray-600'
               }`}>
-                I typically respond to messages within 2-4 hours during business hours. 
+              <h4 className={`font-semibold mb-3 transition-colors ${isDarkMode ? 'text-dev-text' : 'text-gray-900'
+                }`}>Quick Response</h4>
+              <p className={`text-sm mb-4 transition-colors ${isDarkMode ? 'text-dev-textMuted' : 'text-gray-600'
+                }`}>
+                I typically respond to messages within 2-4 hours during business hours.
                 For urgent matters, feel free to reach out via WhatsApp.
               </p>
               <div className="flex space-x-4">
@@ -182,12 +171,12 @@ const Contact = ({ isDarkMode }) => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <form netlify onSubmit={handleSubmit} className="space-y-6">
+            <form netlify onSubmit={handleSubmit} className="space-y-6" action="https://formspree.io/f/meokvyze"
+              method="POST">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className={`block text-sm font-medium mb-2 transition-colors ${
-                    isDarkMode ? 'text-dev-textSecondary' : 'text-gray-700'
-                  }`}>
+                  <label htmlFor="name" className={`block text-sm font-medium mb-2 transition-colors ${isDarkMode ? 'text-dev-textSecondary' : 'text-gray-700'
+                    }`}>
                     Full Name
                   </label>
                   <input
@@ -197,18 +186,16 @@ const Contact = ({ isDarkMode }) => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors ${
-                      isDarkMode 
-                        ? 'bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted' 
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors ${isDarkMode
+                        ? 'bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted'
                         : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'
-                    }`}
+                      }`}
                     placeholder="Your full name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className={`block text-sm font-medium mb-2 transition-colors ${
-                    isDarkMode ? 'text-dev-textSecondary' : 'text-gray-700'
-                  }`}>
+                  <label htmlFor="email" className={`block text-sm font-medium mb-2 transition-colors ${isDarkMode ? 'text-dev-textSecondary' : 'text-gray-700'
+                    }`}>
                     Email Address
                   </label>
                   <input
@@ -218,20 +205,18 @@ const Contact = ({ isDarkMode }) => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors ${
-                      isDarkMode 
-                        ? 'bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted' 
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors ${isDarkMode
+                        ? 'bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted'
                         : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'
-                    }`}
+                      }`}
                     placeholder="your.email@example.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="subject" className={`block text-sm font-medium mb-2 transition-colors ${
-                  isDarkMode ? 'text-dev-textSecondary' : 'text-gray-700'
-                }`}>
+                <label htmlFor="subject" className={`block text-sm font-medium mb-2 transition-colors ${isDarkMode ? 'text-dev-textSecondary' : 'text-gray-700'
+                  }`}>
                   Subject
                 </label>
                 <input
@@ -241,19 +226,17 @@ const Contact = ({ isDarkMode }) => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors ${
-                    isDarkMode 
-                      ? 'bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted' 
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors ${isDarkMode
+                      ? 'bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted'
                       : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'
-                  }`}
+                    }`}
                   placeholder="What's this about?"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className={`block text-sm font-medium mb-2 transition-colors ${
-                  isDarkMode ? 'text-dev-textSecondary' : 'text-gray-700'
-                }`}>
+                <label htmlFor="message" className={`block text-sm font-medium mb-2 transition-colors ${isDarkMode ? 'text-dev-textSecondary' : 'text-gray-700'
+                  }`}>
                   Message
                 </label>
                 <textarea
@@ -263,11 +246,10 @@ const Contact = ({ isDarkMode }) => {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none ${
-                    isDarkMode 
-                      ? 'bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted' 
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none ${isDarkMode
+                      ? 'bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted'
                       : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'
-                  }`}
+                    }`}
                   placeholder="Tell me about your project or how I can help you..."
                 />
               </div>
