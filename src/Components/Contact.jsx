@@ -182,7 +182,7 @@ const Contact = ({ isDarkMode }) => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form netlify onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className={`block text-sm font-medium mb-2 transition-colors ${
