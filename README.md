@@ -156,7 +156,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 Jashedul Islam Shaun - [jashedulislamshaun@gmail.com](mailto:jashedulislamshaun@gmail.com)
 
-Project Link: [https://github.com/jashedulislamshaun/portfolio](https://github.com/jashedulislamshaun/portfolio)
+Project Link: [https://github.com/shauncuier/portfolio](https://github.com/shauncuier/portfolio)
 
 ---
 
