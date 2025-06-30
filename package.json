@@ -1,6 +1,6 @@
 {
   "name": "jashedul-portfolio",
-  "homepage": "https://shauncuier.github.io/portfolio",
+  "homepage": "https://shauncuier.github.io/portfolio/dist",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "framer-motion": "^10.16.16",
