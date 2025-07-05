@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Menu, X, Terminal, Sun, Moon } from 'lucide-react'
+import PropTypes from 'prop-types'
 
 const Header = ({ activeSection, isDarkMode, setIsDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -10,7 +11,7 @@ const Header = ({ activeSection, isDarkMode, setIsDarkMode }) => {
     { id: 'about', label: 'about()' },
     { id: 'skills', label: 'skills()' },
     { id: 'projects', label: 'projects()' },
-    { id: 'experience', label: 'experience()' },
+    { id: 'experience', label: 'hire_me()' },
     { id: 'contact', label: 'contact()' }
   ]
 
@@ -44,12 +45,12 @@ const Header = ({ activeSection, isDarkMode, setIsDarkMode }) => {
               <span className="text-primary-500">const</span>{' '}
               <span className="text-dev-keyword">developer</span>{' '}
               <span className={isDarkMode ? 'text-dev-operator' : 'text-gray-600'}>=</span>{' '}
-              <span className="text-dev-string">"Jashedul"</span>
+              <span className="text-dev-string">&quot;Jashedul&quot;</span>
             </span>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
@@ -145,6 +146,12 @@ const Header = ({ activeSection, isDarkMode, setIsDarkMode }) => {
       </div>
     </motion.header>
   )
+}
+
+Header.propTypes = {
+  activeSection: PropTypes.string.isRequired,
+  isDarkMode: PropTypes.bool.isRequired,
+  setIsDarkMode: PropTypes.func.isRequired
 }
 
 export default Header

@@ -1,6 +1,64 @@
-import { motion } from 'framer-motion'
-import { Download, Github, Linkedin, ExternalLink, Terminal, Code2, ChevronDown, Sparkles } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { motion, useInView } from 'framer-motion'
+import { Download, Github, Linkedin, Terminal, Code2, ChevronDown, Sparkles, Facebook } from 'lucide-react'
+import { SiStackoverflow } from 'react-icons/si'
+import { useState, useEffect, useRef } from 'react'
+import CountUp from 'react-countup'
+import PropTypes from 'prop-types'
+
+// StatsSection component with scroll trigger
+const StatsSection = ({ stats, isDarkMode }) => {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.7 }}
+      className="grid grid-cols-3 gap-6 max-w-2xl mx-auto mb-12"
+    >
+      {stats.map((stat, index) => (
+        <motion.div
+          key={stat.label}
+          whileHover={{ scale: 1.05, y: -5 }}
+          className={`p-4 rounded-xl backdrop-blur-sm border transition-all ${isDarkMode
+              ? 'bg-dev-surface/50 border-dev-border hover:border-primary-500/50'
+              : 'bg-white/50 border-gray-200 hover:border-primary-300'
+            }`}
+        >
+          <div className="flex items-center justify-center mb-2 text-primary-500">
+            {stat.icon}
+          </div>
+          <div className={`text-2xl font-bold font-mono transition-colors ${isDarkMode ? 'text-dev-text' : 'text-gray-900'
+            }`}>
+            {isInView ? (
+              <CountUp
+                start={0}
+                end={stat.value}
+                duration={2.5}
+                delay={index * 0.2}
+                suffix={stat.suffix}
+                enableScrollSpy = {true}
+              />
+            ) : (
+              0
+            )}
+          </div>
+          <div className={`text-sm transition-colors ${isDarkMode ? 'text-dev-textMuted' : 'text-gray-600'
+            }`}>
+            {stat.label}
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+  )
+}
+
+StatsSection.propTypes = {
+  stats: PropTypes.array.isRequired,
+  isDarkMode: PropTypes.bool.isRequired
+}
 
 const Hero = ({ isDarkMode }) => {
   const [displayText, setDisplayText] = useState('')
@@ -38,23 +96,23 @@ const Hero = ({ isDarkMode }) => {
       color: 'hover:bg-blue-600 hover:text-white'
     },
     {
-      name: 'Fiverr',
-      url: 'https://fiverr.com/jashedulislam',
-      icon: <ExternalLink size={20} />,
-      color: 'hover:bg-green-500 hover:text-white'
+      name: 'Facebook',
+      url: 'https://facebook.com/jashedulislamshaun',
+      icon: <Facebook size={20} />,
+      color: 'hover:bg-blue-500 hover:text-white'
     },
     {
-      name: 'Upwork',
-      url: 'https://www.upwork.com/freelancers/~01c75e88b6540d813f',
-      icon: <ExternalLink size={20} />,
-      color: 'hover:bg-green-600 hover:text-white'
+      name: 'Stack Overflow',
+      url: 'https://stackoverflow.com/users/jashedulislamshaun',
+      icon: <SiStackoverflow size={20} />,
+      color: 'hover:bg-orange-500 hover:text-white'
     }
   ]
 
   const stats = [
-    { label: 'Projects Completed', value: '500+', icon: <Code2 size={16} /> },
-    { label: 'Happy Clients', value: '200+', icon: <Sparkles size={16} /> },
-    { label: 'Years Experience', value: '5+', icon: <Terminal size={16} /> }
+    { label: 'Projects Completed', value: 500, suffix: '+', icon: <Code2 size={16} /> },
+    { label: 'Happy Clients', value: 200, suffix: '+', icon: <Sparkles size={16} /> },
+    { label: 'Years Experience', value: 5, suffix: '+', icon: <Terminal size={16} /> }
   ]
 
   return (
@@ -216,35 +274,7 @@ const Hero = ({ isDarkMode }) => {
           </motion.div>
 
           {/* Stats Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="grid grid-cols-3 gap-6 max-w-2xl mx-auto mb-12"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className={`p-4 rounded-xl backdrop-blur-sm border transition-all ${isDarkMode
-                    ? 'bg-dev-surface/50 border-dev-border hover:border-primary-500/50'
-                    : 'bg-white/50 border-gray-200 hover:border-primary-300'
-                  }`}
-              >
-                <div className="flex items-center justify-center mb-2 text-primary-500">
-                  {stat.icon}
-                </div>
-                <div className={`text-2xl font-bold font-mono transition-colors ${isDarkMode ? 'text-dev-text' : 'text-gray-900'
-                  }`}>
-                  {stat.value}
-                </div>
-                <div className={`text-sm transition-colors ${isDarkMode ? 'text-dev-textMuted' : 'text-gray-600'
-                  }`}>
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+          <StatsSection stats={stats} isDarkMode={isDarkMode} />
 
           {/* Action Buttons */}
           <motion.div
@@ -347,6 +377,10 @@ const Hero = ({ isDarkMode }) => {
       </div>
     </section>
   )
+}
+
+Hero.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired
 }
 
 export default Hero

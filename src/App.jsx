@@ -5,7 +5,7 @@ import Hero from './Components/Hero'
 import About from './Components/About'
 import Skills from './Components/Skills'
 import Projects from './Components/Projects'
-import Experience from './Components/Experience'
+import Freelance from './Components/Freelance'
 import Contact from './Components/Contact'
 import Footer from './Components/Footer'
 import './index.css'
@@ -52,7 +52,7 @@ function App() {
         <About isDarkMode={isDarkMode} />
         <Skills isDarkMode={isDarkMode} />
         <Projects isDarkMode={isDarkMode} />
-        <Experience isDarkMode={isDarkMode} />
+        <Freelance isDarkMode={isDarkMode} />
         <Contact isDarkMode={isDarkMode} />
       </main>
       <Footer isDarkMode={isDarkMode} />

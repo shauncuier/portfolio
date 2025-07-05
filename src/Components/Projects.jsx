@@ -1,69 +1,10 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, Github, Folder, Code2, Terminal } from 'lucide-react'
+import PropTypes from 'prop-types'
+import projectsData from '../data/projects.json'
 
 const Projects = ({ isDarkMode }) => {
-  const projects = [
-    {
-      title: 'ECommerce Pro',
-      description: 'A full-featured e-commerce platform with admin dashboard, payment integration, and inventory management.',
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      liveUrl: 'https://ecommerce-pro-demo.netlify.app',
-      githubUrl: 'https://github.com/jashedulislamshaun/ecommerce-pro',
-      featured: true,
-      codeSnippet: 'const ecommerce = new Platform();'
-    },
-    {
-      title: 'Task Manager App',
-      description: 'A collaborative task management application with real-time updates and team collaboration features.',
-      image: 'https://images.pexels.com/photos/3184300/pexels-photo-3184300.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['React', 'Firebase', 'Tailwind CSS'],
-      liveUrl: 'https://taskmanager-pro.netlify.app',
-      githubUrl: 'https://github.com/jashedulislamshaun/task-manager',
-      featured: true,
-      codeSnippet: 'taskManager.collaborate();'
-    },
-    {
-      title: 'Weather Dashboard',
-      description: 'A responsive weather application with location-based forecasts and interactive charts.',
-      image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['React', 'Chart.js', 'Weather API'],
-      liveUrl: 'https://weather-dashboard-react.netlify.app',
-      githubUrl: 'https://github.com/jashedulislamshaun/weather-dashboard',
-      featured: false,
-      codeSnippet: 'weather.forecast();'
-    },
-    {
-      title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio website built with React and Framer Motion animations.',
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
-      liveUrl: 'https://jashedul-portfolio.netlify.app',
-      githubUrl: 'https://github.com/jashedulislamshaun/portfolio',
-      featured: false,
-      codeSnippet: 'portfolio.showcase();'
-    },
-    {
-      title: 'Blog Platform',
-      description: 'A full-stack blog platform with user authentication, rich text editor, and comment system.',
-      image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['React', 'Node.js', 'MongoDB', 'JWT'],
-      liveUrl: 'https://blog-platform-react.netlify.app',
-      githubUrl: 'https://github.com/jashedulislamshaun/blog-platform',
-      featured: true,
-      codeSnippet: 'blog.publish(content);'
-    },
-    {
-      title: 'Expense Tracker',
-      description: 'A personal finance management app with expense tracking, budgeting, and financial insights.',
-      image: 'https://images.pexels.com/photos/164527/pexels-photo-164527.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['React', 'Chart.js', 'Local Storage'],
-      liveUrl: 'https://expense-tracker-react.netlify.app',
-      githubUrl: 'https://github.com/jashedulislamshaun/expense-tracker',
-      featured: false,
-      codeSnippet: 'expenses.track();'
-    }
-  ]
+  const projects = projectsData.projects
 
   const featuredProjects = projects.filter(project => project.featured)
   const otherProjects = projects.filter(project => !project.featured)
@@ -301,6 +242,10 @@ const Projects = ({ isDarkMode }) => {
       </div>
     </section>
   )
+}
+
+Projects.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired
 }
 
 export default Projects

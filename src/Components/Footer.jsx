@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
-import { Heart, Github, Linkedin, ExternalLink } from 'lucide-react'
+import { Heart, Github, Linkedin, Facebook } from 'lucide-react'
+import { SiStackoverflow } from 'react-icons/si'
+import PropTypes from 'prop-types'
 
 const Footer = ({ isDarkMode }) => {
   const currentYear = new Date().getFullYear()
@@ -16,14 +18,14 @@ const Footer = ({ isDarkMode }) => {
       icon: <Linkedin size={20} />
     },
     {
-      name: 'Fiverr',
-      url: 'https://fiverr.com/jashedulislam',
-      icon: <ExternalLink size={20} />
+      name: 'Facebook',
+      url: 'https://facebook.com/jashedulislamshaun',
+      icon: <Facebook size={20} />
     },
     {
-      name: 'Upwork',
-      url: 'https://upwork.com/freelancers/jashedulislam',
-      icon: <ExternalLink size={20} />
+      name: 'Stack Overflow',
+      url: 'https://stackoverflow.com/users/jashedulislamshaun',
+      icon: <SiStackoverflow size={20} />
     }
   ]
 
@@ -223,6 +225,10 @@ const Footer = ({ isDarkMode }) => {
       </div>
     </footer>
   )
+}
+
+Footer.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired
 }
 
 export default Footer
