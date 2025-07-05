@@ -103,7 +103,7 @@ const Hero = ({ isDarkMode }) => {
     },
     {
       name: 'Stack Overflow',
-      url: 'https://stackoverflow.com/users/jashedulislamshaun',
+      url: 'https://stackoverflow.com/users/30973604/jashedul-islam-shaun',
       icon: <SiStackoverflow size={20} />,
       color: 'hover:bg-orange-500 hover:text-white'
     }
