@@ -27,7 +27,7 @@ const Hero = ({ isDarkMode }) => {
   const socialLinks = [
     {
       name: 'GitHub',
-      url: 'https://github.com/jashedulislamshaun',
+      url: 'https://github.com/shauncuier',
       icon: <Github size={20} />,
       color: 'hover:bg-gray-800 hover:text-white'
     },
@@ -45,7 +45,7 @@ const Hero = ({ isDarkMode }) => {
     },
     {
       name: 'Upwork',
-      url: 'https://upwork.com/freelancers/jashedulislam',
+      url: 'https://www.upwork.com/freelancers/~01c75e88b6540d813f',
       icon: <ExternalLink size={20} />,
       color: 'hover:bg-green-600 hover:text-white'
     }
@@ -148,7 +148,7 @@ const Hero = ({ isDarkMode }) => {
                 : 'ring-white shadow-primary-500/30'
               }`}>
               <img
-                src="https://i.ibb.co/kVvXtPdt/DSC02788.jpg"
+                src="Profile_img.webp"
                 alt="Jashedul Islam Shaun"
                 className="w-full h-full object-cover"
               />
