@@ -208,8 +208,8 @@ const Hero = () => {
                 : 'ring-white shadow-primary-500/30'
               }`}>
               <img
-                src="/Profile_img.webp"
-                alt="Jashedul Islam Shaun - Full Stack Developer"
+                src="/jashedul_islam_shaun.jpg"
+                alt="Jashedul Islam Shaun - Full Stack Developer, React & Node.js Expert from Bangladesh"
                 width="192"
                 height="192"
                 fetchPriority="high"

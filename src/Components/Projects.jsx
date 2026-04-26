@@ -64,7 +64,7 @@ const Projects = () => {
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
-                  alt={`${project.title} - Project Screenshot`}
+                  alt={`${project.title} - React Project by Jashedul Islam Shaun`}
                   loading="lazy"
                   decoding="async"
                   width="600"
