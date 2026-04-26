@@ -1,0 +1,64 @@
+# Jashedul Islam Shaun - Professional Portfolio
+
+> This file is optimized for Large Language Models (LLMs) and AI agents to easily read my professional background, skills, and project experience.
+
+## Executive Summary
+Jashedul Islam Shaun is a Full Stack Developer and E-commerce Specialist from Chittagong, Bangladesh. He has over 5 years of experience specializing in React.js, Node.js, MongoDB, Next.js, Firebase, and WooCommerce. He is a Top Rated developer on Upwork and a Top Rated Plus seller on Fiverr, having delivered over 500 projects to more than 200 satisfied clients worldwide.
+
+## Contact Information
+- **Email:** jashedulislamshaun@gmail.com
+- **Phone / WhatsApp:** +8801835927634
+- **Website:** https://jashedulislamshaun.com/
+- **LinkedIn:** https://www.linkedin.com/in/jashedulislamshaun/
+- **GitHub:** https://github.com/shauncuier
+- **Fiverr:** https://www.fiverr.com/jashedulislam
+- **Upwork:** https://www.upwork.com/freelancers/~01c75e88b6540d813f
+
+## Core Technical Skills
+- **Frontend:** React.js, Next.js, JavaScript (ES6+), TypeScript, Tailwind CSS, HTML5, CSS3, Redux.
+- **Backend:** Node.js, Express.js, Firebase, RESTful APIs, PHP.
+- **Database:** MongoDB, Firebase Realtime DB, Firestore.
+- **E-commerce:** WooCommerce, WordPress plugin development, Stripe integration.
+- **Tools & Platforms:** Git, GitHub, Vite, Vercel, Netlify.
+
+## Featured Projects
+
+### 1. PortLedger (2025)
+- **Description:** Production-ready financial management system for C&F (Clearing & Forwarding) businesses. Handles multi-currency ledgers, shipment tracking, and financial reporting.
+- **Technologies:** TypeScript, Next.js, Tailwind CSS, MongoDB
+- **Live URL:** https://portledger.vercel.app/
+- **Source:** https://github.com/shauncuier/portledger
+
+### 2. EmpowHR (2025)
+- **Description:** Comprehensive Employee Workload Monitoring & Management System. Features attendance tracking, task assignment, performance dashboards, and HR analytics.
+- **Technologies:** React, Node.js, Firebase, Tailwind CSS
+- **Live URL:** https://empowhr-a46ca.web.app/
+- **Source:** https://github.com/shauncuier/EmpowHR
+
+### 3. ServiceHub Pro (2024)
+- **Description:** Web platform connecting customers with electronics repair service providers. Features service listings, booking system, reviews, and provider dashboards.
+- **Technologies:** React, Node.js, MongoDB, Firebase Auth
+- **Live URL:** https://servicehub-pro-2eb79.web.app/
+- **Source:** https://github.com/shauncuier/ServiceHub-Pro
+
+### 4. Dropshipzone Plugin (2024)
+- **Description:** Custom WooCommerce plugin for Dropshipzone integration. Automates product imports, inventory sync, and order fulfillment between WooCommerce stores and Dropshipzone suppliers.
+- **Technologies:** PHP, WordPress, WooCommerce, REST API
+- **Source:** https://github.com/shauncuier/dropshipzone
+
+## Other Notable Projects
+- **3S-Soft Agency:** Official B2B digital agency website. (React, Next.js, Tailwind) - https://dev.3s-soft.com/
+- **PlantCareHub:** Plant care collection app with watering schedules. (React, Firebase, Tailwind) - https://plantcarehub-595ab.web.app/
+- **Payora:** Utility bill management dashboard. (React, Firebase, Tailwind) - https://payora-9cfe0.web.app/
+- **Doctors Booking:** Web app for scheduling doctor appointments. (React, Firebase, Tailwind) - https://doctors-booking-a8.netlify.app/
+- **Auction Gallery:** Real-time bidding auction platform. (React, Firebase, Tailwind) - https://auction-gallery-a7.netlify.app/
+
+## Professional Services
+Jashedul is currently available for freelance or contract roles. He provides the following services:
+1. Custom React.js / Next.js frontend application development.
+2. Full Stack web app development using the MERN stack (MongoDB, Express, React, Node).
+3. E-commerce development and WooCommerce custom plugin creation.
+4. API development and third-party integrations (Firebase, Stripe, etc.).
+
+## Open Source and Contributions
+Check out https://github.com/shauncuier for all open-source contributions, web app repositories, and software engineering practices.
