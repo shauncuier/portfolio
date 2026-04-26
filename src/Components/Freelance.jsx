@@ -4,6 +4,7 @@ import { SiUpwork } from 'react-icons/si'
 import CountUp from 'react-countup'
 import { useRef } from 'react'
 import PropTypes from 'prop-types'
+import { useTheme } from '../context/ThemeContext'
 import { TbBrandFiverr } from 'react-icons/tb'
 
 // StatsCard component with scroll trigger
@@ -59,7 +60,8 @@ StatsCard.propTypes = {
   isDarkMode: PropTypes.bool.isRequired
 }
 
-const Freelance = ({ isDarkMode }) => {
+const Freelance = () => {
+  const { isDarkMode } = useTheme()
   const platforms = [
     {
       name: 'Fiverr',
@@ -284,10 +286,6 @@ const Freelance = ({ isDarkMode }) => {
       </div>
     </section>
   )
-}
-
-Freelance.propTypes = {
-  isDarkMode: PropTypes.bool.isRequired
 }
 
 export default Freelance

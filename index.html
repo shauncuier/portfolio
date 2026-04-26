@@ -3,9 +3,18 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="" />
-  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Performance: preload LCP hero image -->
+  <link rel="preload" as="image" href="/Profile_img.webp" fetchpriority="high" />
+  <!-- Performance: prefetch external image CDN -->
+  <link rel="dns-prefetch" href="https://images.pexels.com" />
+  <link rel="preconnect" href="https://images.pexels.com" crossorigin />
+  <!-- Theme color for mobile browser chrome -->
+  <meta name="theme-color" content="#0a0e1a" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
   <meta name="description"
     content="Jashedul Islam Shaun - Full Stack Developer & E-commerce Specialist. Expert in React, Node.js, MongoDB, and modern web technologies." />
   <meta name="keywords"
@@ -42,7 +51,8 @@
   <meta name="geo.position" content="22.3569;91.7832" />
   <meta name="ICBM" content="22.3569, 91.7832" />
   
-  <title>Jashedul Islam Shaun - Full Stack Developer & E-commerce Specialist | React, Node.js Expert</title>
+  <link rel="canonical" href="https://jashedulislamshaun.com/" />
+  <title>Jashedul Islam Shaun - Full Stack Developer &amp; E-commerce Specialist | React, Node.js Expert</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -66,7 +76,7 @@
     "https://www.linkedin.com/in/jashedulislamshaun/",
     "https://www.facebook.com/jashedulislamshaun/",
     "https://github.com/shauncuier",
-    " https://stackoverflow.com/users/30973604/jashedul-islam-shaun",
+    "https://stackoverflow.com/users/30973604/jashedul-islam-shaun",
     "https://www.upwork.com/freelancers/~01c75e88b6540d813f",
     "https://www.fiverr.com/jashedulislam"
   ],

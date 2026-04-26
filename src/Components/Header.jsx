@@ -2,8 +2,10 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Menu, X, Terminal, Sun, Moon } from 'lucide-react'
 import PropTypes from 'prop-types'
+import { useTheme } from '../context/ThemeContext'
 
-const Header = ({ activeSection, isDarkMode, setIsDarkMode }) => {
+const Header = ({ activeSection }) => {
+  const { isDarkMode, setIsDarkMode } = useTheme()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navItems = [
@@ -149,9 +151,7 @@ const Header = ({ activeSection, isDarkMode, setIsDarkMode }) => {
 }
 
 Header.propTypes = {
-  activeSection: PropTypes.string.isRequired,
-  isDarkMode: PropTypes.bool.isRequired,
-  setIsDarkMode: PropTypes.func.isRequired
+  activeSection: PropTypes.string.isRequired
 }
 
 export default Header

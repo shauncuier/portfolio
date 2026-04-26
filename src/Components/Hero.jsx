@@ -4,6 +4,7 @@ import { SiStackoverflow } from 'react-icons/si'
 import { useState, useEffect, useRef } from 'react'
 import CountUp from 'react-countup'
 import PropTypes from 'prop-types'
+import { useTheme } from '../context/ThemeContext'
 
 // StatsSection component with scroll trigger
 const StatsSection = ({ stats, isDarkMode }) => {
@@ -60,7 +61,8 @@ StatsSection.propTypes = {
   isDarkMode: PropTypes.bool.isRequired
 }
 
-const Hero = ({ isDarkMode }) => {
+const Hero = () => {
+  const { isDarkMode } = useTheme()
   const [displayText, setDisplayText] = useState('')
   const [currentIndex, setCurrentIndex] = useState(0)
   const [showCursor, setShowCursor] = useState(true)
@@ -206,8 +208,12 @@ const Hero = ({ isDarkMode }) => {
                 : 'ring-white shadow-primary-500/30'
               }`}>
               <img
-                src="Profile_img.webp"
-                alt="Jashedul Islam Shaun"
+                src="/Profile_img.webp"
+                alt="Jashedul Islam Shaun - Full Stack Developer"
+                width="192"
+                height="192"
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
               {/* Overlay gradient */}
@@ -377,10 +383,6 @@ const Hero = ({ isDarkMode }) => {
       </div>
     </section>
   )
-}
-
-Hero.propTypes = {
-  isDarkMode: PropTypes.bool.isRequired
 }
 
 export default Hero

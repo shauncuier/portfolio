@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion'
 import { GraduationCap, Heart, Code, Trophy } from 'lucide-react'
-import PropTypes from 'prop-types'
+import { useTheme } from '../context/ThemeContext'
 
-const About = ({ isDarkMode }) => {
+const About = () => {
+  const { isDarkMode } = useTheme()
   const highlights = [
     {
       icon: <Code size={24} />,
@@ -122,10 +123,6 @@ const About = ({ isDarkMode }) => {
       </div>
     </section>
   )
-}
-
-About.propTypes = {
-  isDarkMode: PropTypes.bool.isRequired
 }
 
 export default About

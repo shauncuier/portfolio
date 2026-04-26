@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, Github, Folder, Code2, Terminal } from 'lucide-react'
-import PropTypes from 'prop-types'
 import projectsData from '../data/projects.json'
+import { useTheme } from '../context/ThemeContext'
 
-const Projects = ({ isDarkMode }) => {
+const Projects = () => {
+  const { isDarkMode } = useTheme()
   const projects = projectsData.projects
 
   const featuredProjects = projects.filter(project => project.featured)
@@ -63,7 +64,11 @@ const Projects = ({ isDarkMode }) => {
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} - Project Screenshot`}
+                  loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="192"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
@@ -242,10 +247,6 @@ const Projects = ({ isDarkMode }) => {
       </div>
     </section>
   )
-}
-
-Projects.propTypes = {
-  isDarkMode: PropTypes.bool.isRequired
 }
 
 export default Projects

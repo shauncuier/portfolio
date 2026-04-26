@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion'
 import { Code2, Database, Server, Wrench } from 'lucide-react'
+import { useTheme } from '../context/ThemeContext'
 
-const Skills = ({ isDarkMode }) => {
+const Skills = () => {
+  const { isDarkMode } = useTheme()
   const skillCategories = [
     {
       title: 'Frontend',

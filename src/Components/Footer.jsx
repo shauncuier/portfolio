@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion'
 import { Heart, Github, Linkedin, Facebook } from 'lucide-react'
 import { SiStackoverflow } from 'react-icons/si'
-import PropTypes from 'prop-types'
+import { useTheme } from '../context/ThemeContext'
 
-const Footer = ({ isDarkMode }) => {
+const Footer = () => {
+  const { isDarkMode } = useTheme()
     const currentYear = new Date().getFullYear()
 
     const socialLinks = [
@@ -213,10 +214,6 @@ const Footer = ({ isDarkMode }) => {
             </div>
         </footer>
     )
-}
-
-Footer.propTypes = {
-    isDarkMode: PropTypes.bool.isRequired
 }
 
 export default Footer

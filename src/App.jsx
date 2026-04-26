@@ -1,18 +1,20 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, lazy, Suspense } from 'react'
 
+import { ThemeProvider, useTheme } from './context/ThemeContext'
+// Hero & Header load eagerly — they are above-the-fold (LCP critical)
 import Header from './Components/Header'
 import Hero from './Components/Hero'
-import About from './Components/About'
-import Skills from './Components/Skills'
-import Projects from './Components/Projects'
-import Freelance from './Components/Freelance'
-import Contact from './Components/Contact'
-import Footer from './Components/Footer'
+// All below-fold sections are lazy-loaded for faster initial paint
+const About    = lazy(() => import('./Components/About'))
+const Skills   = lazy(() => import('./Components/Skills'))
+const Projects = lazy(() => import('./Components/Projects'))
+const Freelance = lazy(() => import('./Components/Freelance'))
+const Contact  = lazy(() => import('./Components/Contact'))
+const Footer   = lazy(() => import('./Components/Footer'))
 import './index.css'
-
-function App() {
+function AppContent() {
+  const { isDarkMode } = useTheme()
   const [activeSection, setActiveSection] = useState('hero')
-  const [isDarkMode, setIsDarkMode] = useState(true) // Default to dark mode
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,29 +36,40 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [isDarkMode])
-
   return (
     <div className={`min-h-screen transition-colors duration-300 ${
       isDarkMode ? 'bg-dev-bg text-dev-text' : 'bg-white text-gray-900'
     }`}>
-      <Header activeSection={activeSection} isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+      <Header activeSection={activeSection} />
       <main>
-        <Hero isDarkMode={isDarkMode} />
-        <About isDarkMode={isDarkMode} />
-        <Skills isDarkMode={isDarkMode} />
-        <Projects isDarkMode={isDarkMode} />
-        <Freelance isDarkMode={isDarkMode} />
-        <Contact isDarkMode={isDarkMode} />
+        <Hero />
+        {/* Suspense boundary: below-fold sections load after hero is painted */}
+        <Suspense fallback={
+          <div className={`min-h-screen flex items-center justify-center ${
+            isDarkMode ? 'bg-dev-surface' : 'bg-gray-50'
+          }`}>
+            <div className="w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full animate-spin" />
+          </div>
+        }>
+          <About />
+          <Skills />
+          <Projects />
+          <Freelance />
+          <Contact />
+        </Suspense>
       </main>
-      <Footer isDarkMode={isDarkMode} />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
+  )
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   )
 }
 

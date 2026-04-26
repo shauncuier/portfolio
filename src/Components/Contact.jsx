@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react'
 import { useForm } from '@formspree/react'
-import PropTypes from 'prop-types'
+import { useTheme } from '../context/ThemeContext'
 
-const Contact = ({ isDarkMode }) => {
+const Contact = () => {
+  const { isDarkMode } = useTheme()
   const [state, handleSubmit] = useForm("meokvyze")
 
   const contactInfo = [
@@ -297,10 +298,6 @@ const Contact = ({ isDarkMode }) => {
       </div>
     </section>
   )
-}
-
-Contact.propTypes = {
-  isDarkMode: PropTypes.bool.isRequired
 }
 
 export default Contact
