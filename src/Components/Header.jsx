@@ -10,12 +10,13 @@ const Header = ({ activeSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navItems = [
-    { id: 'hero', label: 'home()' },
-    { id: 'about', label: 'about()' },
-    { id: 'skills', label: 'skills()' },
-    { id: 'projects', label: 'projects()' },
-    { id: 'experience', label: 'hire_me()' },
-    { id: 'contact', label: 'contact()' }
+    { id: 'hero', label: 'home()', type: 'scroll' },
+    { id: 'about', label: 'about()', type: 'scroll' },
+    { id: 'skills', label: 'skills()', type: 'scroll' },
+    { id: 'projects', label: 'projects()', type: 'scroll' },
+    { id: 'experience', label: 'hire_me()', type: 'scroll' },
+    { id: 'resume', label: 'resume()', type: 'link', to: '/resume' },
+    { id: 'contact', label: 'contact()', type: 'scroll' }
   ]
 
   const scrollToSection = (sectionId) => {
@@ -53,44 +54,50 @@ const Header = ({ activeSection }) => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            {navItems.map((item) => (
-              <motion.button
-                key={item.id}
-                whileHover={{ scale: 1.05 }}
-                onClick={() => scrollToSection(item.id)}
-                className={`relative px-3 py-2 text-sm font-mono font-medium transition-colors ${
-                  activeSection === item.id
-                    ? 'text-primary-500'
-                    : isDarkMode 
-                      ? 'text-dev-textSecondary hover:text-primary-400' 
-                      : 'text-gray-700 hover:text-primary-600'
-                }`}
-              >
-                {item.label}
-                {activeSection === item.id && (
-                  <motion.div
-                    layoutId="activeSection"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-500"
-                  />
-                )}
-              </motion.button>
-            ))}
-            
-            {/* Resume Link */}
-            <motion.div whileHover={{ scale: 1.05 }}>
-              <Link
-                to="/resume"
-                className={`inline-flex items-center gap-1.5 px-3 py-2 text-sm font-mono font-medium rounded-lg transition-colors ${
-                  isDarkMode
-                    ? 'text-dev-textSecondary hover:text-primary-400 hover:bg-dev-elevated'
-                    : 'text-gray-700 hover:text-primary-600 hover:bg-primary-50'
-                }`}
-              >
-                <FileText size={14} />
-                resume()
-              </Link>
-            </motion.div>
+          <nav className="hidden md:flex items-center space-x-1">
+            {navItems.map((item) => {
+              if (item.type === 'scroll') {
+                return (
+                  <motion.button
+                    key={item.id}
+                    whileHover={{ scale: 1.05 }}
+                    onClick={() => scrollToSection(item.id)}
+                    className={`relative px-3 py-2 text-sm font-mono font-medium transition-colors ${
+                      activeSection === item.id
+                        ? 'text-primary-500'
+                        : isDarkMode 
+                          ? 'text-dev-textSecondary hover:text-primary-400' 
+                          : 'text-gray-700 hover:text-primary-600'
+                    }`}
+                  >
+                    {item.label}
+                    {activeSection === item.id && (
+                      <motion.div
+                        layoutId="activeSection"
+                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-500"
+                      />
+                    )}
+                  </motion.button>
+                )
+              }
+              
+              // For link types (like Resume)
+              return (
+                <motion.div key={item.id} whileHover={{ scale: 1.05 }}>
+                  <Link
+                    to={item.to}
+                    className={`inline-flex items-center gap-1.5 px-3 py-2 text-sm font-mono font-medium rounded-lg transition-colors ${
+                      isDarkMode
+                        ? 'text-dev-textSecondary hover:text-primary-400 hover:bg-dev-elevated'
+                        : 'text-gray-700 hover:text-primary-600 hover:bg-primary-50'
+                    }`}
+                  >
+                    <FileText size={14} />
+                    {item.label}
+                  </Link>
+                </motion.div>
+              )
+            })}
 
             {/* Theme Toggle */}
             <motion.button
@@ -142,34 +149,45 @@ const Header = ({ activeSection }) => {
                 : 'bg-gray-50/50 border-gray-200'
             }`}
           >
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left px-4 py-3 text-sm font-mono font-medium transition-colors ${
-                  activeSection === item.id
-                    ? isDarkMode 
-                      ? 'text-primary-400 bg-primary-500/10' 
-                      : 'text-primary-600 bg-primary-50'
-                    : isDarkMode 
-                      ? 'text-dev-textSecondary hover:text-dev-text hover:bg-dev-border/30' 
+            {navItems.map((item) => {
+              if (item.type === 'scroll') {
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className={`block w-full text-left px-4 py-3 text-sm font-mono font-medium transition-colors ${
+                      activeSection === item.id
+                        ? isDarkMode 
+                          ? 'text-primary-400 bg-primary-500/10' 
+                          : 'text-primary-600 bg-primary-50'
+                        : isDarkMode 
+                          ? 'text-dev-textSecondary hover:text-dev-text hover:bg-dev-border/30' 
+                          : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                )
+              }
+              
+              return (
+                <Link
+                  key={item.id}
+                  to={item.to}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block w-full text-left px-4 py-3 text-sm font-mono font-medium transition-colors ${
+                    isDarkMode
+                      ? 'text-dev-textSecondary hover:text-dev-text hover:bg-dev-border/30'
                       : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
-            <Link
-              to="/resume"
-              onClick={() => setIsMenuOpen(false)}
-              className={`block w-full text-left px-4 py-3 text-sm font-mono font-medium transition-colors ${
-                isDarkMode
-                  ? 'text-dev-textSecondary hover:text-dev-text hover:bg-dev-border/30'
-                  : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
-              }`}
-            >
-              resume()
-            </Link>
+                  }`}
+                >
+                  <div className="flex items-center gap-2">
+                    <FileText size={14} />
+                    {item.label}
+                  </div>
+                </Link>
+              )
+            })}
           </motion.nav>
         )}
       </div>
