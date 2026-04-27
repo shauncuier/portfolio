@@ -13,6 +13,7 @@ const Freelance = lazy(() => import('./Components/Freelance'))
 const Contact  = lazy(() => import('./Components/Contact'))
 const Footer   = lazy(() => import('./Components/Footer'))
 const Resume   = lazy(() => import('./Pages/Resume'))
+const NotFound = lazy(() => import('./Pages/NotFound'))
 import './index.css'
 
 // Scroll to top on route change
@@ -87,6 +88,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/resume" element={<Resume />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </ThemeProvider>
