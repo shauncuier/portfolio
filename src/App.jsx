@@ -1,4 +1,5 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
 
 import { ThemeProvider, useTheme } from './context/ThemeContext'
 // Hero & Header load eagerly — they are above-the-fold (LCP critical)
@@ -11,8 +12,17 @@ const Projects = lazy(() => import('./Components/Projects'))
 const Freelance = lazy(() => import('./Components/Freelance'))
 const Contact  = lazy(() => import('./Components/Contact'))
 const Footer   = lazy(() => import('./Components/Footer'))
+const Resume   = lazy(() => import('./Pages/Resume'))
 import './index.css'
-function AppContent() {
+
+// Scroll to top on route change
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  return null
+}
+
+function HomePage() {
   const { isDarkMode } = useTheme()
   const [activeSection, setActiveSection] = useState('hero')
 
@@ -68,7 +78,17 @@ function AppContent() {
 function App() {
   return (
     <ThemeProvider>
-      <AppContent />
+      <ScrollToTop />
+      <Suspense fallback={
+        <div className="min-h-screen flex items-center justify-center bg-dev-bg">
+          <div className="w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full animate-spin" />
+        </div>
+      }>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/resume" element={<Resume />} />
+        </Routes>
+      </Suspense>
     </ThemeProvider>
   )
 }

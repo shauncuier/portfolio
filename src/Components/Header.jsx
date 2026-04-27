@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Menu, X, Terminal, Sun, Moon } from 'lucide-react'
+import { Menu, X, Terminal, Sun, Moon, FileText } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { useTheme } from '../context/ThemeContext'
 
@@ -76,6 +77,21 @@ const Header = ({ activeSection }) => {
               </motion.button>
             ))}
             
+            {/* Resume Link */}
+            <motion.div whileHover={{ scale: 1.05 }}>
+              <Link
+                to="/resume"
+                className={`inline-flex items-center gap-1.5 px-3 py-2 text-sm font-mono font-medium rounded-lg transition-colors ${
+                  isDarkMode
+                    ? 'text-dev-textSecondary hover:text-primary-400 hover:bg-dev-elevated'
+                    : 'text-gray-700 hover:text-primary-600 hover:bg-primary-50'
+                }`}
+              >
+                <FileText size={14} />
+                resume()
+              </Link>
+            </motion.div>
+
             {/* Theme Toggle */}
             <motion.button
               whileHover={{ scale: 1.1 }}
@@ -143,6 +159,17 @@ const Header = ({ activeSection }) => {
                 {item.label}
               </button>
             ))}
+            <Link
+              to="/resume"
+              onClick={() => setIsMenuOpen(false)}
+              className={`block w-full text-left px-4 py-3 text-sm font-mono font-medium transition-colors ${
+                isDarkMode
+                  ? 'text-dev-textSecondary hover:text-dev-text hover:bg-dev-border/30'
+                  : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+              }`}
+            >
+              resume()
+            </Link>
           </motion.nav>
         )}
       </div>

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Heart, Github, Linkedin, Facebook } from 'lucide-react'
 import { SiStackoverflow } from 'react-icons/si'
+import { Link } from 'react-router-dom'
 import { useTheme } from '../context/ThemeContext'
 
 const Footer = () => {
@@ -117,7 +118,7 @@ const Footer = () => {
                             viewport={{ once: true }}
                             className="space-y-2"
                         >
-                            {quickLinks.map((link, index) => (
+                            {quickLinks.map((link) => (
                                 <li key={link.name}>
                                     <motion.button
                                         whileHover={{ x: 5 }}
@@ -131,6 +132,19 @@ const Footer = () => {
                                     </motion.button>
                                 </li>
                             ))}
+                            <li>
+                                <motion.div whileHover={{ x: 5 }}>
+                                    <Link
+                                        to="/resume"
+                                        className={`transition-colors font-mono ${isDarkMode
+                                                ? 'text-dev-textSecondary hover:text-dev-text'
+                                                : 'text-gray-300 hover:text-white'
+                                            }`}
+                                    >
+                                        <span className="text-dev-comment">// </span>resume()
+                                    </Link>
+                                </motion.div>
+                            </li>
                         </motion.ul>
                     </div>
 
